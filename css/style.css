@@ -516,6 +516,12 @@ main .landing .btn:hover {
   align-items: center;
   justify-content: space-between;
 }
+@media(max-width:600px){
+  .filter ul  {
+flex-wrap: wrap;
+flex-direction: column;
+  }
+}
 .filter ul li {
   padding: 7px 15px;
   border-radius: 30px;
