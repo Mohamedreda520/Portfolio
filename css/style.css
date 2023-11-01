@@ -520,6 +520,7 @@ main .landing .btn:hover {
   .filter ul  {
 flex-wrap: wrap;
 flex-direction: column;
+display:flex;
   }
 }
 .filter ul li {
