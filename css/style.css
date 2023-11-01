@@ -303,7 +303,7 @@ main .landing .imag img {
 }
 @keyframes  scale3d{
 60%{
-  transform: scale(0.99)rotate3d(0, 2, 1, 16deg);
+  transform: scale(0.7)rotate3d(0, 2, 1, 16deg);
 }
 /* 100%{
   transform: scale(1.2)rotate3d(0, 2, 1, 16deg);
