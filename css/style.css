@@ -10,12 +10,14 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: "Cairo", sans-serif;
   line-height: 1.5;
-  background: #0F0F0F;
-  color: white;
+  background: #fff;
+  color: #000;
+  transition: background 0.8s, color 0.8s;
 }
 html {
   scroll-behavior: smooth;
@@ -35,7 +37,27 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-
+.toggel-btn {
+  background: #4864ff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  padding: 5px 10px;
+  cursor: pointer;
+  justify-content: space-around;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: serif;
+}
+.toggel-btn img{
+ margin-left: 5px;
+}
+.dark-them {
+  background-color: #000;
+  color:#fff;
+}
 ul {
   list-style: none;
 }
@@ -129,7 +151,8 @@ a {
 }
 /* start header */
 header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 99999;
   width: 100%;
   box-shadow: 0 0px 1px 0 rgb(0 0 0 / 80%);
@@ -202,11 +225,7 @@ header .container .fa-moon,
     display: block;
     
   }
-  main .container .landing {
-    display: flex;
-    flex-wrap: wrap;
-
-  }
+  
   header .container .linke li a {
     margin-top: 1.5rem;
     font-size: 1.5rem;
@@ -215,7 +234,7 @@ header .container .fa-moon,
   }
   header .container .linke {
     flex-direction: column;
-    /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 0.8); */
+    
     background-color: white;
     top: -1000px;
     position: absolute;
@@ -223,93 +242,104 @@ header .container .fa-moon,
     left: 0;
     width: 60%;
     border-radius: 5px;
-    /* box-shadow: 0px 5px 14px 3px; */
-    /* background: rgb(0 0 0 / 60%); */
+    
     transition: 0.4s;
     z-index: 1000;
     text-align: center;
   }
-  main .landing .imag img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-  }
+ 
+  
 }
 /* End header */
 /* start main */
 main {
+  background-image: url(../imags/pro.jpeg);
   position: relative;
-  height: calc(100vh + 6.5rem);
-  
+  height:100vh;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+ 
 }
-main .landing {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: calc(100vh + 6.5rem);
-  position: relative;
-  z-index: 99;
+main::before {
+  position: absolute;
+  content: "";
+  background: #0000006a;
+  left: 0;
+  top: 0;
   width: 100%;
-  /* padding-bottom: 50px; */
+  height: 100%;
+}
+main .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 600px;
+  text-align: start;
+}
+main .info h1 {
+  font-size: 50px;
+  font-family: serif;
+  color:#fff;
+  font-weight: 600;
+  margin: 0;
+}
+main .info h1 .active {
+  font-weight: 700;
+ 
+  color: crimson;
   
 }
-main .landing .info h1 {
-  font-size: 17px;
-  padding-bottom: 10px;
+ main  .info #defintion{
+color: white;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: serif;
 }
-main .landing .info h1 .active {
+ main  .info #defintion .text-first{
+
+    font-size: 26px;
+    font-weight: 600;
+}
+main .info #defintion .text-sec big {
   font-weight: 700;
-  /* font-style: italic; */
-  color: crimson;
-  font-size: 35px;
+  color: var(--primary-color-alt);
+ 
 }
-main .landing .info #defintion,
-main .landing .info #defintion span {
+/*main  .info #defintion span {
 position: relative;
-}
-main .landing .info #defintion .text-sec:before{
+} */
+/* main  .info #defintion .text-sec:before{
 position: absolute;
 content: "";
 top: 0;
 left: 0;
 height: 100%;
 width: 100%;
-background-color: var(--beforBack,#0F0F0F);
+/* background-color: var(--beforBack,#0F0F0F); 
 border-left: 2px solid white;
-animation: animat 4s infinite steps(12);
-}
-@keyframes animat{
+ animation: animat 4s infinite steps(12); 
+} */
+/* @keyframes animat{
   40%,60%{
     left: 100%;
   }
   100%{
     left: 0;
   }
-}
-main .landing .info #defintion .active {
+} */
+/* main  .info #defintion .active {
   font-weight: 700;
-  /* font-style: italic; */
+ 
   color: crimson;
   
-}
-main .landing .imag img {
-  max-width: 100%;
-    width: 490px;
-    height: 400px;
-    transform: rotate3d(0, 2, 1, 16deg) ;
-    /* border-radius: 50%; */
-    clip-path: circle(200px at 50% );
-    animation: scale3d 5s infinite linear;
-}
-@keyframes  scale3d{
-60%{
-  transform: scale(0.99)rotate3d(0, 2, 1, 16deg);
-}
-/* 100%{
-  transform: scale(1.2)rotate3d(0, 2, 1, 16deg);
 } */
-}
-main .landing .btn {
+
+
+main  .btn {
   margin-top: 3rem;
   display: block;
   background: var(--main-clr);
@@ -319,19 +349,19 @@ main .landing .btn {
   color: var(--white-color);
   font-size: 16px;
   box-shadow: 0 5px 10px rgb(179 184 250 / 20%);
-  transition: 0.3s;
+
 }
-main .landing .btn:hover {
+main  .btn:hover {
   transform: scale(1.1);
   background: var(--primary-color-alt);
+  transition: 0.3s;
 }
-/* main::after {
-  content: url(../imags/about-after.svg);
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  width: 100%;
-} */
+@media (max-width:865px) {
+  main .info h1{
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+}
 /* End main */
 
 /*------------start about-------------------*/
@@ -516,12 +546,6 @@ main .landing .btn:hover {
   align-items: center;
   justify-content: space-between;
 }
-@media(max-width:600px){
-  .filter ul  {
-flex-wrap: wrap;
-flex-direction: column;
-  }
-}
 .filter ul li {
   padding: 7px 15px;
   border-radius: 30px;
@@ -531,6 +555,12 @@ flex-direction: column;
 }
 .filter ul li.active {
   background-color: var(--main-clr);
+}
+@media(max-width:600px){
+  .filter ul  {
+flex-wrap: wrap;
+flex-direction: column;
+  }
 }
 .projects .container .content {
   position: relative;
