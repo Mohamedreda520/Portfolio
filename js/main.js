@@ -22,6 +22,7 @@ menubar.onclick = () => {
     ul.classList.toggle('active')
 
 }
+
 // window.onscroll = ()=>{
 //     let headre = document.querySelector("header")
 //     if (window.scrollY >=50) {
@@ -33,48 +34,40 @@ menubar.onclick = () => {
 //         headre.style.boxShadow = "none"
 //     }
 // }
-let body = document.querySelector("body")
-let moon = document.querySelector(".fa-moon")
-let text_sec = document.getElementById("text_sec")
-let text_sec_before = window.getComputedStyle(text_sec,'before')
- 
 
+// Dark mode
+let btnmode = document.getElementById('btn');
+let btntext = document.getElementById('btn-text');
+let btnicon = document.getElementById('btn-icon');
+btnmode.onclick = function () {
+    document.body.classList.toggle('dark-them')
 
-
-moon.addEventListener("click", function(){
-    this.classList.toggle('fa-sun')
-    if (this.classList.toggle('fa-moon')) {
-        body.style.background = "#0F0F0F";
-        body.style.color = "white";
-        body.style.transtion = "2s";
-        text_sec.style.setProperty('--beforBack','#0F0F0F') 
-        
-        
-    }else{
-    body.style.background = "white";
-        body.style.color = "black";
-        body.style.transtion = "2s";
-        text_sec.style.setProperty('--beforBack','white')
-        
-           }
-})
+    if (document.body.classList.contains('dark-them')) {
+        btnicon.src = "imags/sun.PNG";
+        btntext.innerHTML = "Light"
+    } else {
+        btnicon.src = "imags/moon.PNG";
+        btntext.innerHTML = "Dark"   
+         
+    }
+} 
 
 //animat for change text
-let text = document.querySelector(".text-sec")
-let textlode = ()=> {
-    setTimeout(() => {
-        text.textContent = "Front-Eend Developer";
-    }, 0)
-    setTimeout(() => {
-        text.textContent = "FreeLancer"
-    }, 4000)
-    setTimeout(() => {
-        text.textContent = "Designer"
-    }, 8000)
+// let text = document.querySelector(".text-sec")
+// let textlode = ()=> {
+//     setTimeout(() => {
+//         text.textContent = "Front-Eend Developer";
+//     }, 0)
+//     setTimeout(() => {
+//         text.textContent = "FreeLancer"
+//     }, 4000)
+//     setTimeout(() => {
+//         text.textContent = "Designer"
+//     }, 8000)
     
-}
-textlode()
-setInterval(textlode,12000)
+// }
+// textlode()
+// setInterval(textlode,12000)
 
 
 // filter
