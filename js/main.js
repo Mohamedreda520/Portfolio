@@ -39,18 +39,24 @@ menubar.onclick = () => {
 let btnmode = document.getElementById('btn');
 let btntext = document.getElementById('btn-text');
 let btnicon = document.getElementById('btn-icon');
+let home = document.querySelector('main');
+let css_of_before = window.getComputedStyle(home,'::before ')
+
 btnmode.onclick = function () {
     document.body.classList.toggle('dark-them')
 
     if (document.body.classList.contains('dark-them')) {
         btnicon.src = "imags/sun.PNG";
-        btntext.innerHTML = "Light"
+        btntext.innerHTML = "Light";
+        home.style.setProperty('--beforeBack','#000000bd')
     } else {
         btnicon.src = "imags/moon.PNG";
-        btntext.innerHTML = "Dark"   
+        btntext.innerHTML = "Dark";
+        home.style.setProperty('--beforeBack','#0000006a')   
          
     }
 } 
+
 
 //animat for change text
 // let text = document.querySelector(".text-sec")
