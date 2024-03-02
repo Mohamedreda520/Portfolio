@@ -263,9 +263,9 @@ main {
  
 }
 main::before {
-  position: absolute;
+ position: absolute;
   content: "";
-  background: #0000006a;
+  background: var(--beforeBack,#0000006a);
   left: 0;
   top: 0;
   width: 100%;
