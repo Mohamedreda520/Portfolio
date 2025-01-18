@@ -558,6 +558,12 @@ main  .btn:hover {
   background-color: var(--main-clr);
 }
 @media(max-width:600px){
+  .filter ul li.active {
+    background-color: var(--main-clr);
+    display: block;
+    width: 100%;
+    text-align: center;
+}
   .filter ul  {
 flex-wrap: wrap;
 flex-direction: column;
